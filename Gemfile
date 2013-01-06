@@ -9,9 +9,12 @@ gem 'sqlite3'
 
 gem 'json'
 
-group :development do
+group :development, :test do
 	gem 'annotate', '2.5.0'
+	gem 'rspec-rails', '2.11.0'
+	gem 'capybara', '1.1.2'
 end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
