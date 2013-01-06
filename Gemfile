@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 group :development do
 	gem 'annotate', '2.5.0'
+	gem 'rspec-rails', '2.11.0'
+	gem 'capybara', '1.1.2'
 end
 
 # Gems used only for assets and not required
