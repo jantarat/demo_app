@@ -32,7 +32,9 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+
     bcrypt-ruby (3.0.1)
+
     builder (3.0.4)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -146,11 +148,13 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (= 2.5.0)
+
   bcrypt-ruby (= 3.0.1)
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
   jquery-rails
   json
+
   rails (= 3.2.10)
   rspec-rails (= 2.11.0)
   sass-rails (~> 3.2.3)
