@@ -19,7 +19,13 @@ describe "UserPages" do
   				expect	{ click_button submit }.not_to change(User, :count)
   				# if click button user ,user not add
   			end	
-  		end
+
+        describe "after submission" do
+        before { click_button submit }
+
+        it { should have_content('error') }
+        end 
+      end
 
   		describe "with valid information" do
   			before do
