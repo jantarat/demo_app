@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 		@user = User.new(params[:user])
 		if @user.save
 		#Do something
+		
 		else
 			render 'new'
 		end	
