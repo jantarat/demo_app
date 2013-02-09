@@ -1,13 +1,12 @@
 DemoApp::Application.routes.draw do
-
-  get "users/new"
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts
 
   match '/signup', to: 'users#new'  # signup_path
-  match '/signup', to: 'sessions#new'
-  match '/signup', to: 'sessions#destroy'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

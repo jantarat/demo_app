@@ -1,0 +1,42 @@
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+
+<div class="row">
+<div class="span6 offset3">
+<%= form_for(:session, url: sessions_path) do |f| %>
+
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<%= f.label :password %>
+<%= f.password_field :password %>
+<br/>
+<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+</div>
+</div>
+<h1>Show all posts</h1>
+
+<table class="table table-hovers">
+<tr>
+<th>Title</th>
+<th>Create At</th>
+<th></th>
+<th></th>
+</tr>
+
+<% @posts.each do |post| %>
+<tr>
+<td><%= post.title %></td>
+<td><%= post.create_at %></td>
+<td><%= link_to 'Show', post %></td>
+<td><%= link_to 'Edit', edit_post_path(post) %></td>
+</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Create new post', new_post_path %>
