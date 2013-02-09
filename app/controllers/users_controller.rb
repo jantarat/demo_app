@@ -1,34 +1,33 @@
 class UsersController < ApplicationController
-	
-	def index
+
+	def index #first index to show
 		@users = User.all
 	end
 
 	def new
-		@user = User.new #create new object user
+		@user = User.new #create new user
 	end
 
-	def show
+	def show #show for user
 		@user = User.find(params[:id])
 	end
 
-	def create
-		@user = User.new(params[:user])
-		if @user.save
-		#Do something
-		redirect_to @user
+	def create # to create something
+		@user = User.new(params[:user])  #create user
+		if @user.save #if cansave
+			redirect_to @user
 		else
-			render 'new'
-		end	
+			render 'new' #if can't save show new
+		end
 	end
 
-	def edit
-		@user = User.find(params[:id])
+	def edit # for edit something
+  		@user = User.find(params[:id])
 	end
 
-	def update
+	def update # for update something
 		@user = User.find(params[:id])
-		respond_to do |format|
+		    respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
@@ -39,7 +38,8 @@ class UsersController < ApplicationController
     end
 	end
 
-	def destroy
+	def destroy # for destroy something
 
 	end
+
 end
