@@ -12,7 +12,8 @@
 require 'spec_helper'
 
 describe Post do
-		before { @post = Post.new(body: "Hello Jantarat", title: "ting tong") }
+	let(:user) {}
+	before { @post = Post.new(body: "Hello Jantarat", title: "ting tong") }	
 	subject {@post} 
 
 	it { should respond_to(:body) }

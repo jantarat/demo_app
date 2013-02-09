@@ -9,6 +9,11 @@
 #
 
 class Comment < ActiveRecord::Base
-  attr_accessible :body
+  attr_accessible :body, :user_id, :post_id
+  belongs_to :post
+  belongs_to :user
+
   	validates :body, presence: true
+  	validates :post_id, presence: true
+  	validates :user_id, presence: true
 end
